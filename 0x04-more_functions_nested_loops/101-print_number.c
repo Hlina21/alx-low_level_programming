@@ -1,7 +1,6 @@
 #include "main.h"
 
 void print_integer(int m);
-
 /**
  * print_number - a function that prints an integer
  * @n: An input integer
@@ -27,7 +26,6 @@ void print_number(int n)
  * Return: Nothing
  */
 void print_integer(int m)
-
 {
 	int i = 1000000000;
 
