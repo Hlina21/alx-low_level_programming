@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * reset_to_98 - function that takes apointer to an int as parameter and
