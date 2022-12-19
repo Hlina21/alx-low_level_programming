@@ -3,8 +3,8 @@
 
 /**
  * reset_to_98 - function that takes apointer to an int as parameter and
- *updates te value it points to be 98.
-
+ * updates te value it points to be 98.
+ *
  * @n: this is the entry
  */
 
