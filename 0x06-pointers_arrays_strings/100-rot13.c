@@ -9,23 +9,23 @@
 
 char *rot13(char *str);
 {
-	int index1, index2;
+	int index1 = 0, index2;
 
-	char alphabet[] = {'A', 'B', 'C', 'D', 'E', 'F',
+	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
 		'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
 		'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
 		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
 		'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
 		'u', 'v', 'w', 'x', 'y', 'z'};
-	char rot13key[] = {'N', 'O', 'P', 'Q', 'R', 'S',
+	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
 		'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C',
 			'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 			'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
 			'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g',
 			'h', 'i', 'j', 'k', 'l', 'm'};
-	for (index1 = 0; str[index1] != '\0'; index1++)
+	while (str[index1])
 	{
-		for (index2 = 0; alphabet[index2] != '\0'; index2++)
+		for (index2 = 0; index2 < 52; index2++)
 		{
 			if (str[index1] == alphabet[index2])
 			{
@@ -33,6 +33,7 @@ char *rot13(char *str);
 				break;
 			}
 		}
+		index1++;
 	}
 	return (str);
-}
+
