@@ -2,7 +2,7 @@
 
 /**
  * _strncpy - copys a string with n
- * @desy: copy to
+ * @dest: copy to
  * @src: copy from
  * @n: number of char to be copied
  * Return: dest
