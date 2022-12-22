@@ -2,31 +2,35 @@
 
 /**
  * rot13 - encodes a string using rot13.
- * @str: the string to be encoded.
+ * @s: pointer to string.
  *
- * Return: string.
+ * Return: pointer to encoded string.
  */
 
-char *rot13(char *str);
+char *rot13(char *s)
 {
-	int index1 = 0, index2 = 0;
-	char string_rot13[] = "NnOnPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm"
-	char string_aplha[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+	int stringCount, rotation;
+	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+		'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
+		'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+		'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+		'V', 'W', 'X', 'Y', 'Z'};
+	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+		'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+		'k', 'l', 'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+		'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+		'I', 'J', 'K', 'L', 'M'};
 
-	while (str[index1] != '\0')
+	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 	{
-		do {
-			if (str[index1] == string_alpha[index2])
+		for (rotation = 0; rotation < 53; rotation++)
+		{
+			if (r1[rotation] == s[stringCount])
 			{
-				str[index1] = string_alpha[index2];
+				s[stringCount] = r2[rotation];
 				break;
 			}
-			index2++;
 		}
-	while (string_alpha[index2] != '\0')
-		index2 = 0;
-	index1++;
 	}
-	return (str);
+	return (s);
 }
-
