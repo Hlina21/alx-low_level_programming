@@ -4,9 +4,7 @@
  * main - Add one line
  * followed by a new line
  * Return: Always 0
- *
  */
-
 int main(void)
 {
 	int n;
