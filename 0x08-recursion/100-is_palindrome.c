@@ -25,7 +25,7 @@ int checkp(int i, int lg, char *s)
 	{
 		if (s[i] == s[lg])
 		{
-			return (checkp(i + 1, lg + 1, s));
+			return (checkp(i + 1, lg - 1, s));
 		}
 		else if (s[i] != s[lg])
 		{
