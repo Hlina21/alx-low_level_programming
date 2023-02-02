@@ -1,22 +1,16 @@
 #include "main.h"
 
 /**
- * flip_bits - gets the number of bits to flip to get from n to m
- * @n: initial number
- * @m: final number
- * Return: the number of flipped bits
+ * get_endianness - checks if multibyte data is the endianness.
+ * Return: If big-endian - 0, if little-endian -1.
  */
 
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
+int get_endianness(void)
 {
-	unsigned long int flipped = n ^ m;
-	int count = 0;
+	int number = 1;
+	char *endian = (char *)&number;
 
-	while (flipped)
-	{
-		if (flipped & 1)
-			count++;
-		flipped >>= 1;
-	}
-	return (count);
+	if (*endian == 1)
+		return (1);
+	return (1);
 }
